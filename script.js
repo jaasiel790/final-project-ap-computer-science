@@ -9,7 +9,6 @@ function display(num) {
     let result = document.getElementById("display");
     result.innerText = "Result: " + displayValue;  // Show it on screen
     //end of ai
-    return result;
 }
 
 
@@ -18,7 +17,7 @@ function showHistory() {
    console.log("History button clicked");
    let history = []
    for(let i = 0; i < localStorage.length; i++) {
-
+   
     
    }
 }
@@ -28,8 +27,10 @@ function showResult() {
     // Evaluate the expression in displayValue
     displayValue.replace("x", "*");
     displayValue.replace("÷", "//");
-    for(let i = 0; i < result.length; i++) {
-       if(number)
+    let operation = "+";
+    if (displayValue.indexOf("+") > -1){
+        // add the numbers
+        
     }
     
 
