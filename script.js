@@ -11,6 +11,11 @@ function display(num) {
     //end of ai
 }
 
+function clear() {
+    console.log("ds");
+    displayValue = "";
+}
+
 
 
 function showHistory() {
@@ -28,10 +33,20 @@ function showResult() {
     displayValue.replace("x", "*");
     displayValue.replace("÷", "//");
     let operation = "+";
-    if (displayValue.indexOf("+") > -1){
+
+    for(let i = 0; i < displayValue.length; i++){
+        let cur = i;
+
+        if (displayValue.indexOf("+") > -1 && curr == "+"){
         // add the numbers
+        console.log("numbers added");
+        let add = displayValue.slice(curr);
+        let result = 
+        
         
     }
+    }
+    
     
 
 }
