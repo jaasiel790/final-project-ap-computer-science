@@ -1,14 +1,15 @@
 console.log("Script loaded");
 let numbers = document.getElementById("numbers");
 let buttons = document.getElementById("buttons");
+let result = document.getElementById("display");
 //created with ai
 let displayValue = "";
 
 function display(num) {
     displayValue += num;  // Add the clicked number to displayValue
-    let result = document.getElementById("display");
     result.innerText = "Result: " + displayValue;  // Show it on screen
     //end of ai
+    
 }
 
 function clear() {
@@ -21,10 +22,6 @@ function clear() {
 function showHistory() {
    console.log("History button clicked");
    let history = []
-   for(let i = 0; i < localStorage.length; i++) {
-   
-    
-   }
 }
 
 function showResult() {
@@ -33,20 +30,22 @@ function showResult() {
     displayValue.replace("x", "*");
     displayValue.replace("÷", "//");
     let operation = "+";
-
-    for(let i = 0; i < displayValue.length; i++){
-        let cur = i;
-
-        if (displayValue.indexOf("+") > -1 && curr == "+"){
-        // add the numbers
-        console.log("numbers added");
-        let add = displayValue.slice(curr);
-        let result = 
-        
-        
-    }
-    }
     
+    if (displayValue.indexOf("+") > -1){
+        let parts = displayValue.split("+");
+        //used ai for variables num 1 and num 2
+        let num1 = parseFloat(parts[0])
+        let num2 = parseFloat(parts[1])
+        result.innerText = num1 + num2;
+    }
+
+        if (displayValue.indexOf("-") > -1){
+        let parts = displayValue.split("-");
+        //used ai for variables num 1 and num 2
+        let num1 = parseFloat(parts[0])
+        let num2 = parseFloat(parts[1])
+        result.innerText = num1 - num2;
+    }
     
 
 }
