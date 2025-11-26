@@ -1,98 +1,155 @@
-/* used ai for line 3 */
+/* Calculator Styling */
 
-/* Start of AI generate code */
-:root{
-  --bg:#6a6a6a;
-  --panel:#fff;
-  --accent:#4a90e2;
-  --op:#f5a623;
-  --text:#17202a;
-  --muted:#6b7280;
+:root {
+  --bg: #1a1a1a;
+  --calc-bg: #2d2d2d;
+  --display-bg: #0a0a0a;
+  --num-btn: #3d3d3d;
+  --op-btn: #ff9500;
+  --equals-btn: #4CAF50;
+  --clear-btn: #f44336;
+  --text: #ffffff;
+  --button-hover: #4d4d4d;
+  --op-hover: #ffb143;
 }
 
-body{
-  margin:0;
-  font-family:system-ui, Arial, sans-serif;
-  background:var(--bg);
-  display:flex;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background: var(--bg);
+  display: flex;
   flex-direction: column;
-  align-items: baseline;
-  justify-content: stretch;
-  min-height:100vh;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
 }
 
-.calculator{
-  width:380px;
-  max-width:95%;
-  background:var(--panel);
-  border-radius:12px;
-  padding:16px;
-  box-shadow:0 6px 20px rgba(20,30,50,0.08);
+/* Main calculator container */
+body > * {
+  width: 100%;
+  max-width: 400px;
 }
 
-#display{
-  text-align:right;
-  padding:12px;
-  font-size:1.6rem;
-  color:var(--text);
-  margin-bottom:12px;
-  color: #000000;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+#display {
+  background: var(--display-bg);
+  border: 2px solid var(--calc-bg);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  font-size: 2.5rem;
+  color: var(--text);
+  margin-bottom: 20px;
+  min-height: 60px;
+  display: flex;
+  align-items: start;
+  justify-content: flex-end;
 }
 
-/* panels layout: numbers + operators */
-.panels{
-  display:grid;
-  grid-template-columns:1fr 110px;
-  gap:12px;
+#result {
+  width: 100%;
 }
 
-/* numbers grid */
-.panel.numbers{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
+#display2 {
+  background: var(--display-bg);
+  border: 2px solid var(--calc-bg);
+  border-radius: 8px;
+  padding: 15px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 20px;
+  max-height: 100px;
+  overflow-y: auto;
+  min-height: 50px;
 }
 
-/* operators column */
-.panel.operators{
-  display:grid;
-  gap:8px;
-  align-content:start;
+
+/* Button grid layout */
+#numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-/* buttons */
-button{
-  background:#f3f6f9;
-  border:none;
-  border-radius:8px;
-  padding:14px 14px;
-  font-size:1.5rem;
-  cursor:pointer;
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
-#equals{
-  background:var(--accent);
-  color:#fff;
+/* Button styling */
+button {
+  padding: 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  color: var(--text);
+  background: var(--num-btn);
 }
 
-#clear{
-  background:var(--op);
-  color:#fff;
+button:hover {
+  background: var(--button-hover);
+  transform: scale(1.05);
 }
 
-/* responsive: stack panels on small screens */
-@media (max-width:420px){
-  .panels{
-    grid-template-columns:1fr;
-  }
-  .panel.operators{
-    grid-auto-flow:column;
-    grid-auto-columns:1fr;
-    overflow-x:auto;
-  }
+button:active {
+  transform: scale(0.95);
 }
 
-/*end of ai*/
+/* Operator buttons */
+#add, #subtract, #multiply, #divide {
+  background: var(--op-btn);
+  color: white;
+}
+
+#add:hover, #subtract:hover, #multiply:hover, #divide:hover {
+  background: var(--op-hover);
+}
+
+/* Equals button */
+#equals {
+  background: var(--equals-btn);
+  color: white;
+  grid-column: span 2;
+}
+
+#equals:hover {
+  background: #45a049;
+}
+
+/* Clear button */
+#clear {
+  background: var(--clear-btn);
+  color: white;
+  grid-column: span 2;
+}
+
+#clear:hover {
+  background: #da190b;
+}
+
+/* Decimal button */
+#decimal {
+  background: var(--num-btn);
+}
+
+/* History button */
+#history {
+  background: var(--op-btn);
+  color: white;
+}
+
+#history:hover {
+  background: var(--op-hover);
+}
 
 

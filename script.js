@@ -62,7 +62,35 @@ function showResult() {
 
 }
 
+
 function showHistory() {
    console.log("History button clicked");
-   displayHistory.innerText = "History:" + history;   
+   for(let i = 0; i < displayHistory.children.length; i++){
+      displayHistory.children[i].remove();
+      i--;
+   }
+
+   for(let i = 0; i < history.length; i++){
+      // Get current history item text
+      let curr = history[i];
+
+      // Create a p element
+      let historyParagraph = document.createElement("p");
+
+      // Set innerText to curr
+      historyParagraph.innerText = curr;
+
+      // Set some styles (maybe a CSS class)
+      
+      // Append p element to the history div
+      displayHistory.appendChild(historyParagraph);
+      console.log(displayHistory.children);
+
+   }
+
+
 }
+
+
+
+
