@@ -1,4 +1,4 @@
-console.log("Script loaded");
+console.log("Script started");
 let numbers = document.getElementById("numbers");
 let buttons = document.getElementById("buttons");
 let result = document.getElementById("result");
@@ -58,8 +58,9 @@ function showResult() {
      result.innerText = num1 / num2;
      history.push(displayValue + "=" + result.innerText);
    }
+   
     
-
+   showHistory();
 }
 
 
@@ -88,9 +89,6 @@ function showHistory() {
 
    }
 
-
 }
-
-
 
 
