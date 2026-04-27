@@ -61,12 +61,18 @@ function showResult() {
    if(displayValue != ""){
      displayValue = ("");
    }
-   showHistory();
+   showHistory(10);
 }
 
 
 
-function showHistory() {
+function showHistory(maxItems = 10) {
+   for(let i =0; i < history.length; i++){
+      let curr = history[i];
+      if(history.length > maxItems){
+         history.shift();
+      }
+   }
    for(let i = 0; i < displayHistory.children.length; i++){
       displayHistory.children[i].remove();
       i--;
